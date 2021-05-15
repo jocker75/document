@@ -1,19 +1,19 @@
-% Created by Murat Can Karacabey
-% this is inspired by Michael Pollind's Awesome CV 
-% Created from scratch as a much simpler alternative to it to actually learn LaTeX.
-% Might be interpreted as an easier-to-edit or easier-to-understand-what-is-going-on version of it.
-\author{Murat Can Karacabey}
-\RequirePackage[dvipsnames]{xcolor} % moved here I guess article class causes option clash with xcolor if used after loading the class
+%Crée par Abderrahmane GHANEM 
+% Ce ducument est inspiré par Michael Pollind's.
+% Crée dans le but d'apprendre à maîtriser mieux Latex et Augmenter mes chances de trouver un premier emploi.
+% Trés facile à réaliser.
+\author{GHANEM Abderrahmane}
+\RequirePackage[dvipsnames]{xcolor} 
 \LoadClass[11pt]{article}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{muratcan_cv}[2020/04/15 Muratcan CV Class]
+\ProvidesClass{Ghanem_cv}[2021/05/15 Abderrahmane CV ]
 \RequirePackage[sfdefault]{noto}
 \RequirePackage{etoolbox}
 \RequirePackage{pgffor}
 \RequirePackage{titlesec}
 \RequirePackage{tikz}
 \RequirePackage{fontspec}
-\RequirePackage[left=0.75in,top=0.3in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\RequirePackage[left=0.75in,top=0.3in,right=0.75in,bottom=0.6in]{geometry} 
 \RequirePackage{hyperref}
 \RequirePackage{fontawesome}
 \RequirePackage{mfirstuc}
@@ -22,18 +22,18 @@
 \RequirePackage{array}
 \pagestyle{empty}
 
-%Setup
+%
 
-\newcommand*{\setname}[2]{\def\@firstname{#1}\def\@lastname{#2}}
-\newcommand*{\setaddress}[1]{\def\@address{#1}}
+\newcommand*{\setname}[2]{\def\@Prénom{#1}\def\@Nom{#2}}
+\newcommand*{\setaddress}[1]{\def\@addresse{#1}}
 \newcommand*{\setmobile}[1]{\def\@mobile{#1}}
 \newcommand*{\setposition}[1]{\def\@position{#1}}
-\newcommand*{\setmail}[1]{\def\@mail{#1}}
+\newcommand*{\setmail}[1]{\def\@email{#1}}
 \newcommand*{\setthemecolor}[1]{\def\@themecolor{#1}}
 \newcommand*{\setlinkedinaccount}[1]{\def\@linkedinaccount{#1}}
 \newcommand*{\setgithubaccount}[1]{\def\@githubaccount{#1}}
 
-%Setup for coverletter
+
 
 \newcommand*{\setcompanyname}[1]{\def\@companyname{#1}}
 \newcommand*{\setcontactperson}[1]{\def\@contactperson{#1}}
@@ -45,10 +45,9 @@
     urlcolor=cyan,
 }
 
-% View commands
-% Header
+% Qlqs commande
 
-% can makebox also be used?
+
 \newcommand\headerview{
 \begin{minipage}{0.25\linewidth}
     \profpic{0.045}{images/photo}
@@ -60,7 +59,7 @@
 \end{minipage}
 }
 
-%profilpicture
+%Photo de profil
 
 \newsavebox{\picbox}
 \newcommand{\profpic}[2]{%
@@ -73,24 +72,23 @@
     {\usebox{\picbox}};}]% 
     {};}
     
-%contactsubviews 
+%contacte
     
     
 \newcommand{\githubview}{\href{\@linkedinaccount}{\faLinkedinSquare\ \footnotesize linkedin}}
 \newcommand{\linkedinview}{\href{\@githubaccount}{\faGithubSquare\ \footnotesize github}}
 
 \newcommand{\name}{%
-    {\large \@firstname \ \textsc{\@lastname}}
+    {\large \@Prénom \ \textsc{\@Nom}}
 }
 
 \newcommand{\contact}{%
-        {\small \@address  \cps \@mobile \\ \@mail%
+        {\small \@addresse  \cps \@mobile \\ \@email%
         \\%
         \linkedinview \cps \githubview \\ 
         } % 
 }
 
-% Covverletterview
 
 \newcommand\coverletter[1]{ 
 \\  \coverlettersubview 
@@ -107,28 +105,25 @@ Position: & \@claimedposition \\
 }
 
 
-% Helper commands
 
-\newcommand\ruleafter[1]{#1~{\color{black!60!\@themecolor}\hrulefill}} % a trick to put the line with <before> parameter in \titleformat
+\newcommand\ruleafter[1]{#1~{\color{black!60!\@themecolor}\hrulefill}} 
 
-%colorfulpipeseperator
+
 
 \newcommand{\cps}{{\color{\@themecolor} \quad\textbar\quad}}
 \newcommand{\cpshalf}{{\color{\@themecolor} \hspace{0.2em}\textbar\hspace{0.2em}}}
 
 \newcommand{\coloredbullet}{{\color{\@themecolor} \textbullet}}
 
-% Edit section styles
+% styles
 
-\titleformat{\section}      % Customise the \section command 
-  {\large\bfseries\scshape\raggedright\color{\@themecolor}} % Make the \section headers large (\Large),
-                               % small capitals (\scshape) and left aligned (\raggedright)
-  {}{0em}                      % Can be used to give a prefix to all sections, like 'Section ...'
-  {\ruleafter}                           % Can be used to insert code before the heading
-
+\titleformat{\section}     
+  {\large\bfseries\scshape\raggedright\color{\@themecolor}}
+  {}{0em}                      
+  {\ruleafter}                          
 \titlespacing*{\section}{-1pt}{0pt}{0pt}
 
-% Textview commands
+
 
 \newcommand{\experience}[2]{%
   \mbox { \hspace{1em} \scshape \textbf{#1} }%
@@ -191,8 +186,10 @@ Position: & \@claimedposition \\
     \makeatother
   \end{itemize}
 }
+
+
 \newcommand\createfootnote{%
   \renewcommand{\footnotesize}{\fontsize{8pt}{1pt}\selectfont}
     \renewcommand\footnoterule{\rule{0.3\linewidth}{0.1
     pt}}
-    \let\thefootnote\relax\footnote{\today\ / \href{https://github.com/muratcankaracabey/latex_cv}{source code}}}
+    \let\thefootnote\relax\footnote{\today\ / \href{https://github.com/jocker75/document}{source code}}}
