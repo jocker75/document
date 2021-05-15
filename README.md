@@ -1,3 +1,3 @@
-# TUTO
- c'est juste un essai pour voir le résultat
+# Projet et CV
+ Vous pouvez trouver mon CV et mes projets réalisé pendant ma formation.
  
