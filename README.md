@@ -1,3 +1,3 @@
 # Projet et CV
- Vous pouvez trouver mon CV et mes projets réalisé pendant ma formation.
+ Vous pouvez trouver mon CV et mes projets réalisés pendant ma formation.
  
