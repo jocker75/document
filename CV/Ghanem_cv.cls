@@ -192,4 +192,4 @@ Position: & \@claimedposition \\
   \renewcommand{\footnotesize}{\fontsize{8pt}{1pt}\selectfont}
     \renewcommand\footnoterule{\rule{0.3\linewidth}{0.1
     pt}}
-    \let\thefootnote\relax\footnote{\today\ / \href{https://github.com/jocker75/document}{source code}}}
+    \let\thefootnote\relax\footnote{\today\ / \href{https://github.com/jocker75/document/tree/main/CV}{source code}}}
